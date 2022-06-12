@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/02-Tour-Fetch-Data.git/static/css/main.c4c2bda9.css",
-    "main.js": "/02-Tour-Fetch-Data.git/static/js/main.bdf99642.js",
-    "index.html": "/02-Tour-Fetch-Data.git/index.html",
-    "main.c4c2bda9.css.map": "/02-Tour-Fetch-Data.git/static/css/main.c4c2bda9.css.map",
-    "main.bdf99642.js.map": "/02-Tour-Fetch-Data.git/static/js/main.bdf99642.js.map"
+    "main.css": "/02-Tour-Fetch-Data/static/css/main.c4c2bda9.css",
+    "main.js": "/02-Tour-Fetch-Data/static/js/main.bdf99642.js",
+    "index.html": "/02-Tour-Fetch-Data/index.html",
+    "main.c4c2bda9.css.map": "/02-Tour-Fetch-Data/static/css/main.c4c2bda9.css.map",
+    "main.bdf99642.js.map": "/02-Tour-Fetch-Data/static/js/main.bdf99642.js.map"
   },
   "entrypoints": [
     "static/css/main.c4c2bda9.css",
