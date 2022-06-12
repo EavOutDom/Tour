@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Tour = ({ image, info, name, price }) => {
+const Tour = ({id, image, info, name, price, removeItem }) => {
+    const [read, setRead] = useState(false);
     return <div className="container">
         <div className="name-price">
             <h4>{name}</h4>
@@ -9,9 +10,17 @@ const Tour = ({ image, info, name, price }) => {
         <div className='img'>
             <img src={image} alt={name}/>
         </div>
-        <p style={{textAlign: 'start'}}>{info}</p>
+        <p style={{textAlign: 'start'}}>
+        {read ? info : info.substring(0, 200)} 
+        <button onClick={() => {
+        if(read){
+        setRead(false)
+        }else{
+            setRead(true);
+        }
+        }}>{read ? 'read less' : '...read more'}</button></p>
         <div className="no">
-        <button>NOT INTERESTED</button></div>
+        <button onClick={() => removeItem(id)}>NOT INTERESTED</button></div>
     </div>;
 };
 

@@ -7,17 +7,22 @@ function App() {
     const [tours, setTours] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    const removeItem = (id) => {
+        setTours(() => {
+            return tours.filter((data) => data.id !== id);
+        });
+    };
+    const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setTours(data);
+            setIsLoading(false);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                setTours(data);
-                setIsLoading(false);
-            } catch (error) {
-                console.log(error);
-            }
-        };
         fetchData();
     }, []);
 
@@ -28,9 +33,21 @@ function App() {
             </div>
         );
     }
+    if (tours.length === 0) {
+        return (
+            <div className="nth">
+                <div style={{ fontWeight: "600", fontSize: "30px" }}>
+                    nothing left
+                </div>
+                <button className="btn" onClick={fetchData}>
+                    Refresh
+                </button>
+            </div>
+        );
+    }
     return (
         <div>
-            <Tours tours={tours} />
+            <Tours tours={tours} removeItem={removeItem} />
         </div>
     );
 }

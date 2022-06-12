@@ -1,8 +1,8 @@
 import React from "react";
 import Tour from "./tour";
 
-const Tours = ({ tours }) => {
-    console.log(tours);
+const Tours = ({ tours, removeItem }) => {
+    // console.log(tours);
     return (
         <div>
         <div style={{fontWeight: '600', fontSize: '30px', marginTop: '10px'}}>
@@ -12,6 +12,8 @@ const Tours = ({ tours }) => {
                 return (
                     <div key={data.id} className="box">
                         <Tour
+                            id={data.id}
+                            removeItem={removeItem}
                             image={data.image}
                             info={data.info}
                             name={data.name}

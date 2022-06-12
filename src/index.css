@@ -32,6 +32,13 @@ code {
     transform: translate(-50%, -50%);
 }
 
+.nth {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .img img {
     width: 400px;
     height: 250px;
@@ -41,7 +48,7 @@ code {
 
 .container {
     width: 500px;
-    height: 580px;
+    height: 600px;
     background-color: whitesmoke;
     padding: 16px;
     border-radius: 10px;
@@ -64,5 +71,17 @@ code {
     padding: 10px;
     font-size: 15px;
     border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+p button {
+    border: none;
+    font-weight: 600;
     cursor: pointer;
 }
