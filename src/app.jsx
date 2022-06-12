@@ -19,7 +19,7 @@ function App() {
             }
         };
         fetchData();
-    }, [isLoading]);
+    }, []);
 
     if (isLoading) {
         return (

@@ -5,10 +5,12 @@ const Tours = ({ tours }) => {
     console.log(tours);
     return (
         <div>
+        <div style={{fontWeight: '600', fontSize: '30px', marginTop: '10px'}}>
             Tours
+            </div>
             {tours.map((data) => {
                 return (
-                    <div key={data.id}>
+                    <div key={data.id} className="box">
                         <Tour
                             image={data.image}
                             info={data.info}

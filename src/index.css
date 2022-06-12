@@ -7,11 +7,20 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+    background-color: bisque;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+
+.box {
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading {
@@ -21,4 +30,39 @@ code {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.img img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.container {
+    width: 500px;
+    height: 580px;
+    background-color: whitesmoke;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 21px 12px 36px -4px rgba(0, 0, 0, 0.34);
+    -webkit-box-shadow: 21px 12px 36px -4px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 21px 12px 36px -4px rgba(0, 0, 0, 0.34);
+}
+
+.name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.no button {
+    /* border-radius: 10px; */
+    /* background-color: darkgoldenrod; */
+    width: 200px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    cursor: pointer;
 }
