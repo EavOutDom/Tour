@@ -1,30 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Tours from "./tours";
 import Loading from "./loading";
-const url = "https://course-api.com/react-tours-project";
-
+import { useSelector, useDispatch } from "react-redux";
+import { fetchData } from "./features/tour/tourSlice";
 function App() {
-    const [tours, setTours] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const { tours, isLoading } = useSelector((state) => ({ ...state.tour }));
+    const dispatch = useDispatch();
 
-    const removeItem = (id) => {
-        setTours(() => {
-            return tours.filter((data) => data.id !== id);
-        });
-    };
-    const fetchData = async () => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setTours(data);
-            setIsLoading(false);
-        } catch (error) {
-            console.log(error);
-        }
-    };
     useEffect(() => {
-        fetchData();
-    }, []);
+        dispatch(fetchData());
+    }, [dispatch]);
 
     if (isLoading) {
         return (
@@ -33,13 +18,13 @@ function App() {
             </div>
         );
     }
-    if (tours.length === 0) {
+    if (!tours || tours.length === 0) {
         return (
             <div className="nth">
                 <div style={{ fontWeight: "600", fontSize: "30px" }}>
                     nothing left
                 </div>
-                <button className="btn" onClick={fetchData}>
+                <button className="btn" onClick={() => dispatch(fetchData())}>
                     Refresh
                 </button>
             </div>
@@ -47,7 +32,7 @@ function App() {
     }
     return (
         <div>
-            <Tours tours={tours} removeItem={removeItem} />
+            <Tours tours={tours} />
         </div>
     );
 }
